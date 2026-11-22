@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pramod Madhwaraj Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=Noto+Sans+Kannada:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: coastal profile with an explorer. Deep-sea hero, saffron accents, sector ledger with a detail panel, searchable project list. */
+:root{
+  --ink:#0a2e3d;--sea:#0f5a6e;--foam:#f3f7f7;--saffron:#c96f0a;--card:#ffffff;--text:#14262e;--muted:#52666e;--line:#d6e2e4;
+  --display:'Bricolage Grotesque','Noto Sans Kannada',system-ui,sans-serif;
+  --body:'Public Sans','Noto Sans Kannada',system-ui,sans-serif;
+  --hero-bg:#0a2e3d;--hero-text:#eaf6f7;--hero-accent:#f0a040;--sel:#e3f0f2;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--ink:#e6f3f5;--sea:#6cc3d4;--foam:#0b1a20;--saffron:#f0a040;--card:#112630;--text:#e3eef0;--muted:#97adb4;--line:#1f3943;--hero-bg:#06161c;--sel:#163541;color-scheme:dark}
+}
+:root[data-theme="dark"]{--ink:#e6f3f5;--sea:#6cc3d4;--foam:#0b1a20;--saffron:#f0a040;--card:#112630;--text:#e3eef0;--muted:#97adb4;--line:#1f3943;--hero-bg:#06161c;--sel:#163541;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--foam);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--hero-accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance}
+h2{font-size:clamp(1.8rem,4.5vw,2.6rem);color:var(--ink);font-weight:800;letter-spacing:-.02em}
+.kicker{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--saffron);margin-bottom:10px}
+section{padding:72px 0}
+.band{background:var(--card);border-block:1px solid var(--line)}
+.lede{max-width:64ch;color:var(--muted);margin-top:14px}
+.note{margin-top:16px;font-size:.88rem;color:var(--muted);max-width:72ch}
+.ico{width:42px;height:42px;color:var(--saffron);fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;display:block}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:var(--hero-bg);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.brand{font-family:var(--display);font-weight:800;color:var(--hero-text);text-decoration:none;white-space:nowrap}
+.brand span{color:var(--hero-accent)}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end}
+.links a{color:var(--hero-text);opacity:.82;text-decoration:none;font-size:.9rem;padding:8px 10px;border-radius:8px;white-space:nowrap}
+.links a:hover{opacity:1;background:rgba(255,255,255,.08)}
+#theme{background:none;border:1px solid rgba(255,255,255,.28);color:var(--hero-text);border-radius:8px;padding:6px 10px;font-size:.82rem;white-space:nowrap}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-text);padding:56px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--hero-accent)}
+.kn{font-family:'Noto Sans Kannada',sans-serif;font-weight:500;color:var(--hero-accent);margin-top:18px;font-size:1.2rem}
+.tag{margin-top:10px;font-size:1.1rem;max-width:46ch;opacity:.92}
+.role{margin-top:20px;display:inline-block;border:1px solid rgba(255,255,255,.28);padding:8px 14px;border-radius:999px;font-size:.9rem}
+.role b{color:var(--hero-accent);font-weight:600}
+.facts{display:grid;gap:12px;padding-bottom:36px}
+.fact{border-left:3px solid var(--hero-accent);padding:6px 0 6px 16px;background:linear-gradient(90deg,rgba(255,255,255,.06),transparent)}
+.fact strong{display:block;font-family:var(--display);font-size:2rem;line-height:1.1;font-weight:800}
+.fact span{font-size:.92rem;opacity:.85}
+.scene{display:block;width:100%;height:auto;max-height:300px}
+.cap{font-size:.78rem;color:var(--hero-text);opacity:.7;padding:8px 20px 14px;max-width:1120px;margin:0 auto}
+.strip{background:var(--hero-bg)}
+
+/* numbers */
+.numgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:30px}
+.num{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.num b{display:block;font-family:var(--display);font-size:1.9rem;color:var(--sea);font-variant-numeric:tabular-nums;line-height:1.1}
+.num span{font-size:.88rem;color:var(--muted)}
+
+/* timeline */
+.timeline{list-style:none;margin-top:32px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 24px 28px}
+.timeline li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--saffron);border:3px solid var(--foam)}
+.timeline li.now::before{background:var(--sea);box-shadow:0 0 0 4px color-mix(in srgb,var(--sea) 25%,transparent)}
+.yr{font-family:var(--display);font-weight:800;color:var(--sea);font-size:1.1rem}
+.timeline p{max-width:62ch}
+
+/* explorer */
+.explorer{display:grid;grid-template-columns:1fr 1.05fr;gap:32px;margin-top:30px;align-items:start}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.seg{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.88rem}
+.seg[aria-pressed="true"]{background:var(--ink);color:var(--foam);border-color:var(--ink)}
+.rows{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:150px 1fr 64px;gap:10px;align-items:center;font-size:.92rem;text-align:left;background:none;border:1px solid transparent;border-radius:10px;padding:7px 8px;width:100%}
+.row:hover{background:var(--sel)}
+.row[aria-pressed="true"]{background:var(--sel);border-color:var(--saffron)}
+.bar{height:14px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--sea),var(--saffron));border-radius:4px}
+.row b{font-variant-numeric:tabular-nums;text-align:right}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:sticky;top:72px}
+.banner{display:block;width:100%;height:auto}
+.pbody{padding:20px 22px 24px}
+.pbody h3{font-size:1.6rem;color:var(--ink)}
+.pbody .amt{font-family:var(--display);font-weight:800;color:var(--sea);font-size:1.1rem;margin:4px 0 12px}
+.pbody ul{list-style:none;display:grid;gap:8px;max-height:420px;overflow:auto;padding-right:6px}
+.pbody li{font-size:.95rem;padding-left:16px;position:relative}
+.pbody li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--saffron)}
+
+/* before after */
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+.bacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.bacard h3{font-size:1rem;color:var(--ink);margin-bottom:10px}
+.bacard .v{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--sea);font-variant-numeric:tabular-nums}
+.bacard .u{font-size:.85rem;color:var(--muted)}
+.bacard .bar{margin-top:10px;height:12px}
+.bacard .bar i{transition:width .5s}
+
+/* stacked progress */
+.stack{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:8px 0 4px;background:var(--line)}
+.stack i{display:block;height:100%}
+.stack .a{background:var(--sea)}.stack .b{background:var(--saffron)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend .a::before{background:var(--sea)}.legend .b::before{background:var(--saffron)}
+.roadbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:24px;display:grid;gap:18px}
+
+/* finder */
+.finder{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.finder input,.finder select{font:inherit;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);min-width:0}
+.finder input{flex:1 1 260px}
+.results{list-style:none;margin-top:16px;display:grid;gap:8px}
+.results li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.95rem;display:flex;flex-direction:column;gap:2px}
+.results small{color:var(--saffron);font-weight:600;letter-spacing:.04em}
+mark{background:color-mix(in srgb,var(--hero-accent) 45%,transparent);color:inherit;border-radius:3px;padding:0 2px}
+.count{margin-top:12px;font-size:.9rem;color:var(--muted)}
+
+/* bridges */
+.bridges{margin-top:26px;display:grid;gap:8px}
+.br{display:grid;grid-template-columns:230px 1fr 60px;gap:12px;align-items:center;font-size:.93rem}
+.br b{text-align:right;font-variant-numeric:tabular-nums}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card .ico{margin-bottom:10px}
+.card h3{font-size:1.15rem;color:var(--ink);margin-bottom:6px}
+.card p{color:var(--muted);font-size:.95rem}
+.linkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px}
+.linkcard{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .15s,border-color .15s}
+.linkcard:hover{transform:translateY(-3px);border-color:var(--saffron)}
+.linkcard h3{font-size:1.15rem;color:var(--ink);margin-bottom:6px}
+.linkcard p{color:var(--muted);font-size:.95rem}
+.go{display:inline-block;margin-top:12px;color:var(--sea);font-weight:600;font-size:.9rem}
+.go::after{content:" \2197"}
+
+footer{background:var(--hero-bg);color:var(--hero-text);padding:44px 0}
+footer p{max-width:74ch;font-size:.9rem;opacity:.85;margin-top:10px}
+footer strong{font-family:var(--display);font-size:1.2rem}
+footer a{color:var(--hero-accent)}
+.flinks{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:.92rem}
+
+@media (max-width:820px){
+  .hero .wrap,.explorer{grid-template-columns:1fr}
+  .panel{position:static}
+  section{padding:52px 0}
+  .row{grid-template-columns:1fr 60px;gap:4px 10px}
+  .row .bar{grid-column:1 / -1;order:3}
+  .br{grid-template-columns:1fr 56px;gap:4px 10px}
+  .br .bar{grid-column:1 / -1;order:3}
+  .brand{font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bacard .bar i{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-boat" viewBox="0 0 48 48"><path d="M6 30h36l-6 10H12z"/><path d="M24 6v24M24 8l13 18H24"/></symbol>
+<symbol id="i-bridge" viewBox="0 0 48 48"><path d="M4 32h40M10 32V16M38 32V16M10 16c6 12 22 12 28 0M4 40h40"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 48 48"><path d="M26 4L10 28h12l-2 16 18-26H26z"/></symbol>
+<symbol id="i-hospital" viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="30" rx="3"/><path d="M24 17v16M16 25h16"/></symbol>
+<symbol id="i-track" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="18" ry="11"/><ellipse cx="24" cy="24" rx="9" ry="4"/></symbol>
+<symbol id="i-card" viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="24" rx="3"/><path d="M12 22h14M12 29h8"/></symbol>
+<symbol id="i-town" viewBox="0 0 48 48"><path d="M6 40h36M10 40V18l14-8 14 8v22M18 40V28h12v12"/></symbol>
+<symbol id="i-people" viewBox="0 0 48 48"><circle cx="18" cy="16" r="6"/><circle cx="33" cy="19" r="5"/><path d="M6 40c0-9 6-13 12-13s12 4 12 13M30 29c6 0 12 3 12 11"/></symbol>
+<symbol id="i-doc" viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 24h14M18 31h14"/></symbol>
+<symbol id="i-road" viewBox="0 0 48 48"><path d="M18 4L8 44M30 4l10 40M24 8v6M24 20v8M24 34v8"/></symbol>
+<symbol id="i-drop" viewBox="0 0 48 48"><path d="M24 6C16 18 12 24 12 30a12 12 0 0024 0c0-6-4-12-12-24z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 48 48"><path d="M8 40C8 20 20 8 40 8c0 20-12 32-32 32zM8 40L26 22"/></symbol>
+<symbol id="i-bus" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="28" rx="4"/><path d="M8 24h32M14 36v6M34 36v6"/></symbol>
+<symbol id="i-book" viewBox="0 0 48 48"><path d="M6 10h14a4 4 0 014 4v26a3 3 0 00-3-3H6zM42 10H28a4 4 0 00-4 4v26a3 3 0 013-3h15z"/></symbol>
+<symbol id="i-home" viewBox="0 0 48 48"><path d="M6 24L24 8l18 16M12 20v20h24V20M20 40V28h8v12"/></symbol>
+<symbol id="i-factory" viewBox="0 0 48 48"><path d="M6 40V20l12 8v-8l12 8v-8l12 8v12zM34 16V6h6v14"/></symbol>
+<symbol id="i-coin" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 14v20M18 20c0-3 12-3 12 0s-12 3-12 6 12 3 12 0"/></symbol>
+<symbol id="i-heart" viewBox="0 0 48 48"><path d="M24 40S8 30 8 19a8 8 0 0116-3 8 8 0 0116 3c0 11-16 21-16 21z"/></symbol>
+<symbol id="i-temple" viewBox="0 0 48 48"><path d="M24 4v8M10 22h28L24 12zM12 22v20M20 22v20M28 22v20M36 22v20M8 42h32"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Pramod <span>Madhwaraj</span></a>
+    <div class="links">
+      <a href="#journey">Journey</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#coast">Fishermen</a>
+      <a href="#roads">Roads</a>
+      <a href="#finder">Find a project</a>
+      <a href="#links">Links</a>
+    </div>
+    <button id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Pramod<br><em>Madhwaraj</em></h1>
+      <p class="kn">ಕರಾವಳಿಯಿಂದ ರಾಷ್ಟ್ರದವರೆಗೆ, ಜನರೊಂದಿಗೆ</p>
+      <p class="tag">From the coast to the nation, with the people. Udupi's MLA from 2013 to 2018 and Karnataka's Minister for Fisheries, Youth Empowerment and Sports.</p>
+      <p class="role">Since Nov 2026: <b>National General Secretary, BJP OBC Morcha</b></p>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>No. 1 of 224</strong><span>MLAs in a March 2018 Times of India / Prajavani performance survey</span></div>
+      <div class="fact"><strong>First fisherman</strong><span>to become Karnataka's Fisheries Minister</span></div>
+      <div class="fact"><strong>₹2,026 crore</strong><span>in grants for Udupi constituency over five years, 2013–18, per the campaign booklet</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="strip" aria-label="Illustration" style="padding:0">
+<svg class="scene" viewBox="0 0 1200 300" role="img" aria-label="Illustration of fishing boats and a bridge on the Udupi coast at sunrise">
+<defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2e3d"/><stop offset=".7" stop-color="#b8631f"/><stop offset="1" stop-color="#f0a040"/></linearGradient>
+<g id="boat"><path d="M0 0h120l-20 26H20z" fill="#06161c"/><path d="M60 0V-78M60-74l34 62H60z" fill="#0f5a6e" stroke="#06161c" stroke-width="3"/><rect x="26" y="-24" width="30" height="24" fill="#0a2e3d"/><path d="M60-78l16 6-16 6z" fill="#e8891a"/></g></defs>
+<rect width="1200" height="300" fill="url(#sk)"/>
+<circle cx="640" cy="190" r="64" fill="#ffe2ae" opacity=".92"/>
+<path d="M0 210h1200v90H0z" fill="#0a2e3d" opacity=".9"/>
+<g fill="none" stroke="#6cc3d4" stroke-width="2" opacity=".45"><path d="M40 235c40-10 80 10 120 0s80-10 120 0M360 255c40-10 80 10 120 0s80-10 120 0M700 240c40-10 80 10 120 0s80-10 120 0M980 262c40-10 80 10 120 0"/></g>
+<g fill="#06161c"><path d="M860 175h340v8H860z"/><path d="M890 183v30M990 183v30M1090 183v30M1180 183v30"/><path d="M860 175v-34M1010 175v-34" stroke="#06161c" stroke-width="5"/></g>
+<path d="M860 141c30 34 110 34 150 34" fill="none" stroke="#06161c" stroke-width="3"/>
+<use href="#boat" transform="translate(90,196)"/><use href="#boat" transform="translate(330,206) scale(.75)"/><use href="#boat" transform="translate(470,200) scale(.55)"/>
+</svg>
+<p class="cap">Illustration: fishing boats near the Malpe–Padukere bridge, Udupi coast.</p>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <p class="kicker">By the numbers</p>
+    <h2>Five years in figures</h2>
+    <p class="lede">Headline counts from the 2018 campaign booklet for Udupi constituency, 2013–18.</p>
+    <div class="numgrid" id="numgrid"></div>
+  </div>
+</section>
+
+<section id="journey" class="band">
+  <div class="wrap">
+    <p class="kicker">Journey</p>
+    <h2>Udupi to the national stage</h2>
+    <p class="lede">Born in Udupi in 1968, he came up through student and youth politics before his first election as MLA.</p>
+    <ol class="timeline">
+      <li><div class="yr">1968</div><p>Born in Udupi, into a family already part of the district's public life.</p></li>
+      <li><div class="yr">Early years</div><p>Youth leadership in the NSUI and the Youth Congress.</p></li>
+      <li><div class="yr">2013</div><p>Elected MLA for Udupi, as a first-time legislator.</p></li>
+      <li><div class="yr">2015</div><p>Appointed Parliamentary Secretary (Revenue).</p></li>
+      <li><div class="yr">2016</div><p>Became Minister of State, then Cabinet Minister for Fisheries, Youth Empowerment and Sports under Chief Minister Siddaramaiah. Also Udupi District In-charge Minister. The booklet names Oscar Fernandes as his guide.</p></li>
+      <li><div class="yr">March 2018</div><p>Ranked No. 1 among 224 MLAs in a Times of India / Prajavani survey.</p></li>
+      <li><div class="yr">12 May 2018</div><p>Contested Udupi in the Assembly election as the Congress candidate. The 2018 booklet was published for this campaign.</p></li>
+      <li><div class="yr">7 May 2022</div><p>Joined the BJP.</p></li>
+      <li><div class="yr">2023</div><p>Campaigned across 13 constituencies in the Karnataka Assembly election.</p></li>
+      <li class="now"><div class="yr">21 Nov 2026</div><p>Appointed National General Secretary of the BJP OBC Morcha, to organise OBC Morcha units and represent backward and fishing communities.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="explorer">
+  <div class="wrap">
+    <p class="kicker">Explorer</p>
+    <h2>Where the money went</h2>
+    <p class="lede">Select a sector to see its projects. Amounts are grants in ₹ crore for Udupi constituency during 2013–18, as listed in the booklet.</p>
+    <div class="explorer">
+      <div>
+        <div class="tools" role="group" aria-label="Sort sectors">
+          <button class="seg" type="button" id="sortAmt" aria-pressed="true">Largest first</button>
+          <button class="seg" type="button" id="sortAz" aria-pressed="false">A to Z</button>
+        </div>
+        <div class="rows" id="rows"></div>
+        <p class="note">Sector figures overlap in places and do not add exactly to the headline ₹2,026 crore. They are the campaign's own numbers, transcribed from a scanned booklet.</p>
+      </div>
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<section id="coast" class="band">
+  <div class="wrap">
+    <svg class="ico" aria-hidden="true"><use href="#i-boat"/></svg>
+    <p class="kicker" style="margin-top:10px">The coast</p>
+    <h2>Fishermen first</h2>
+    <p class="lede">His father built Malpe harbour. As Fisheries Minister he raised subsidies and relief for boat owners and fisherwomen. Switch between before and after.</p>
+    <div class="tools" style="margin-top:22px" role="group" aria-label="Compare before and after">
+      <button class="seg" type="button" id="baBefore" aria-pressed="false">Before</button>
+      <button class="seg" type="button" id="baAfter" aria-pressed="true">After</button>
+    </div>
+    <div class="ba" id="ba"></div>
+
+    <h3 style="margin-top:44px;color:var(--ink);font-size:1.5rem">Bridges that replaced boat crossings</h3>
+    <p class="note" style="margin-top:6px">Cost in ₹ crore. The Malpe–Padukere bridge is 315 m long and ended about 60 years of dependence on boats.</p>
+    <div class="bridges" id="bridges"></div>
+  </div>
+</section>
+
+<section id="roads">
+  <div class="wrap">
+    <svg class="ico" aria-hidden="true"><use href="#i-road"/></svg>
+    <p class="kicker" style="margin-top:10px">Roads</p>
+    <h2>3,348 road works sanctioned</h2>
+    <p class="lede">The largest single sector, at ₹468 crore, across PWD, CRF, Namma Grama Namma Raste, PMGSY, Nagarotthana-3, coastal authority and SC/ST colony roads.</p>
+    <div class="roadbox">
+      <div>
+        <strong>By number of works</strong>
+        <div class="stack" role="img" aria-label="2,695 of 3,348 works completed, 653 in progress"><i class="a" style="width:80.5%"></i><i class="b" style="width:19.5%"></i></div>
+        <div class="legend"><span class="a">Completed: 2,695 works, ₹286.48 cr</span><span class="b">In progress: 653 works, ₹182.52 cr</span></div>
+      </div>
+      <div>
+        <strong>By length (788 km sanctioned)</strong>
+        <div class="stack" role="img" aria-label="573 km completed, 215 km in progress"><i class="a" style="width:72.7%"></i><i class="b" style="width:27.3%"></i></div>
+        <div class="legend"><span class="a">Completed: 573 km</span><span class="b">In progress: 215 km</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sports" class="band">
+  <div class="wrap">
+    <p class="kicker">Youth and sports</p>
+    <h2>Ajjarkad stadium, upgraded</h2>
+    <p class="lede">Part of ₹25.99 crore for youth and sports. Udupi hosted a national women's sports meet, state rural sports three times, a state youth mela three times and a state youth fest.</p>
+    <div class="grid">
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-track"/></svg><h3>400 m synthetic track</h3><p>₹3.64 crore.</p></article>
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-track"/></svg><h3>Synthetic tennis court</h3><p>₹3.75 crore.</p></article>
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-drop"/></svg><h3>Swimming pool</h3><p>₹2 crore, plus ₹1.69 crore for a roof.</p></article>
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-people"/></svg><h3>International gym and indoor shuttle</h3><p>Gym ₹2 crore. Air-conditioned indoor shuttle hall ₹1.21 crore.</p></article>
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><h3>Sports hostels</h3><p>Boys' hostel ₹1.49 crore, women's hostel ₹1 crore, upgraded to PU level.</p></article>
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-town"/></svg><h3>Grounds and academies</h3><p>Brahmavar cricket ground on 5.5 acres, 2 acres at Malpe Padukere for water sports, athletics and swimming academies.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="finder">
+  <div class="wrap">
+    <p class="kicker">Find a project</p>
+    <h2>Search the record</h2>
+    <p class="lede">Type a place, scheme or word, such as "Malpe", "bridge" or "hostel", and narrow by sector.</p>
+    <div class="finder">
+      <input id="q" type="search" placeholder="Search projects, places, schemes" aria-label="Search projects">
+      <select id="sec" aria-label="Filter by sector"></select>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ul class="results" id="results"></ul>
+  </div>
+</section>
+
+<section id="legacy" class="band">
+  <div class="wrap">
+    <p class="kicker">Family</p>
+    <h2>A public-service household</h2>
+    <div class="grid">
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-people"/></svg><h3>Malpe Madhwaraj</h3><p>His father. MLA for Udupi in 1962, builder of Malpe harbour and the town's rise as a fisheries hub. The M Madhwaraj Charitable Trust carries his name.</p></article>
+      <article class="card"><svg class="ico" aria-hidden="true"><use href="#i-people"/></svg><h3>Manorama Madhwaraj</h3><p>His mother. MLA, minister and Member of Parliament, known for 5-cent and 3-cent housing sites for the poor.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="wrap">
+    <p class="kicker">Links</p>
+    <h2>Read more</h2>
+    <p class="lede">Further reading. Each link opens in a new tab.</p>
+    <div class="linkgrid">
+      <a class="linkcard" href="https://pramodmadhwaraj.in" target="_blank" rel="noopener"><h3>Pramod Madhwaraj online</h3><p>Biography, achievements and news on his web presence.</p><span class="go">pramodmadhwaraj.in</span></a>
+      <a class="linkcard" href="https://pramodmadhwaraj.in/wp-content/uploads/2023/10/Portfolio-English.pdf" target="_blank" rel="noopener"><h3>Portfolio (PDF)</h3><p>An English portfolio on his career, fisheries work and entry into the BJP.</p><span class="go">Open the PDF</span></a>
+      <a class="linkcard" href="https://en.wikipedia.org/wiki/Pramod_Madhwaraj" target="_blank" rel="noopener"><h3>Wikipedia</h3><p>An independent summary of his offices, elections and party changes.</p><span class="go">en.wikipedia.org</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Pramod Madhwaraj Profile</strong>
+    <p>This is an unofficial profile page. It is not run by Pramod Madhwaraj, his office or any political party. Project details come from a 40-page Kannada campaign booklet published for the 2018 Karnataka Assembly election (Udupi, Congress). Figures are the campaign's own claims and were read from a scan, so small errors are possible.</p>
+    <div class="flinks"><a href="https://pramodmadhwaraj.in" target="_blank" rel="noopener">pramodmadhwaraj.in</a><a href="https://en.wikipedia.org/wiki/Pramod_Madhwaraj" target="_blank" rel="noopener">Wikipedia</a><a href="#top">Back to top</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var S=[
+{id:"roads",name:"Roads",cr:468,icon:"road",items:[
+ "3,348 road works and 788 km sanctioned across the constituency",
+ "2,695 works and 573 km completed, costing ₹286.48 crore",
+ "653 works and 215 km in progress, costing ₹182.52 crore",
+ "Funded through PWD, CRF, Namma Grama Namma Raste, PMGSY, Nagarotthana-3, coastal authority and SC/ST colony road schemes"]},
+{id:"city",name:"Udupi city",cr:445,icon:"town",items:[
+ "ADB and AMRUT drinking water and underground drainage: ₹370 crore",
+ "Varahi to Baje water scheme of 43 MLD, up from 23 MLD: about ₹270 crore",
+ "State Finance Commission funds: ₹13.34 crore for 320 works",
+ "13th Finance Commission: ₹6.68 crore. 14th Finance Commission: ₹4.90 crore",
+ "Paryaya 2014 and 2016 works: ₹6 crore",
+ "Amrut Mahotsav funds: ₹17.25 crore",
+ "Nagarotthana-3: ₹35 crore, including the Syndicate Circle to DC office road and a four-lane Ambagilu to Kallianka road (₹4.50 crore)",
+ "About 500 house sites at Lingotigudde, Kodange and Sannakkibettu",
+ "Pramod Madhwaraj Badavane at Kodankur: 33 houses for Sudugadu Siddha and Budaga Jangama nomads",
+ "Tourism, ₹16.70 crore: 450 m walkway behind the shipyard (₹54.09 lakh)",
+ "Malpe beach: toilets, a beach-cleaning machine, granite benches and free Wi-Fi",
+ "36 tourist taxis worth ₹0.72 crore, and Mannapalla (Manipal) facilities",
+ "Tourism roads: Malpe beach road ₹2.20 crore, Nalkur to Joma Theertha falls road ₹2.10 crore",
+ "Santhekatte commercial complex: ₹1.92 crore"]},
+{id:"fish",name:"Fisheries and ports",cr:433,icon:"boat",items:[
+ "Sales-tax-free diesel per boat raised from 1.25 to 1.50 lakh kL, with the subsidy paid by RTGS",
+ "State diesel subsidy raised from ₹105 crore to ₹157 crore from 2017-18",
+ "₹254.13 crore in diesel subsidy reached 1,622 boat owners in the constituency",
+ "163 illegally built mechanised boats regularised, and feasibility-letter rules simplified",
+ "Matsyashraya housing aid doubled from ₹0.60 lakh to ₹1.20 lakh: 368 fisher families, ₹3.19 crore",
+ "Interest on ₹50,000 fisherwomen loans cut from 3% to 2%: 29,789 beneficiaries, ₹16 crore in two years",
+ "Death-at-sea relief raised from ₹2 lakh to ₹5 lakh and then ₹6 lakh: 34 cases helped",
+ "28.80 km of fisheries roads built for ₹4.876 crore, plus the Malpe Tottam road bridge (₹0.35 crore)",
+ "Deputy Director of Fisheries office opened in Udupi, which earlier depended on Mangaluru",
+ "Malpe harbour phase 3 at Baputhota: berthing for 700+ boats and a mechanical slipway with Tebma Shipyard",
+ "75 m jetty at Malpe: ₹2.40 crore. Phase 1 and 2 upgrade: ₹5 crore. Dredging: ₹7.75 crore",
+ "Padukere 250 m jetty and Bobbarya Pade jetty extension: ₹11.30 crore (NABARD proposal)",
+ "Further 300 m jetty at Padukere: ₹9.6 crore. Commercial port jetty extensions of 50 m and 100 m proposed",
+ "Udupi old fish market rebuilt as India's largest women's fish market: ₹2.30 crore, about 200 women vendors",
+ "Sea-erosion protection at Malpe, Kidiyoor, Padukere, Hoode and Tottam: ₹19.30 crore"]},
+{id:"nh",name:"National Highway",cr:118.14,icon:"road",items:[
+ "NH-66 drains, roads and bridges: ₹46.50 crore",
+ "₹71.64 crore compensation paid to 872 landowners"]},
+{id:"food",name:"Anna Bhagya",cr:117.04,icon:"card",items:[
+ "₹117.04 crore of Anna Bhagya food security support",
+ "21,000 new BPL ration cards issued"]},
+{id:"bridges",name:"Bridges",cr:84,icon:"bridge",items:[
+ "Malpe–Padukere bridge, 315 m, ₹16.91 crore: ended 60 years of boat dependence",
+ "Mudduru–Miyaru bridge over the Sita river: ₹13 crore (KRDCL)",
+ "Parari bridge over the Swarna on the Ammunje–Perampalli road: ₹10 crore",
+ "Nalkur–Horlali Muddumane bridge: ₹10 crore (CRF)",
+ "Nilavara–Panchamikana bridge: ₹9 crore (CRF)",
+ "Kemmannu Thimmanna Kuduru bridge: ₹5 crore",
+ "Perampalli Pas Kudru, two bridges: ₹4 crore",
+ "Santhekatte–Kemmannu–Hoode bridge: ₹3.50 crore",
+ "Karje–Haluvalli–Inchladi bridge: ₹3.26 crore",
+ "Cherkadi–Gorpalli bridge: ₹2.85 crore",
+ "Kallianka widening ₹0.75 crore, Kodankur Babbuswami mini-bridge ₹0.50 crore, Kambalakatta ₹0.25 crore",
+ "Several Sita-river road bridges and vented dams of ₹0.15 to ₹0.90 crore each"]},
+{id:"agri",name:"Agriculture and allied",cr:71,icon:"leaf",items:[
+ "27 vented dams: ₹11.70 crore",
+ "26 tanks desilted: ₹8.91 crore",
+ "32 river-bank protection works: ₹5.47 crore",
+ "Farm loan waiver: ₹1.38 crore. Low-interest loans to 385 farmers: ₹2.44 crore",
+ "Brahmavar agriculture diploma building and hostel: ₹9 crore",
+ "Raitha Samparka Kendra opened at Adi Udupi",
+ "46 power tillers distributed: ₹26.23 lakh",
+ "Horticulture ₹1.29 crore and watershed works ₹1.08 crore",
+ "Animal husbandry, ₹27 crore: milk incentive of ₹2 to ₹4 per litre paid to 13,197 dairy farmers (₹26.16 crore)",
+ "403 beneficiaries under Pashu Bhagya and related schemes",
+ "Lake works: Mannapalla lake ₹1.45 crore, Chanthar Madaga lake ₹1 crore"]},
+{id:"edu",name:"Education",cr:55.9,icon:"book",items:[
+ "Land secured for Dr G. Shankar Government Women's First Grade College",
+ "New ITI at Kokkarne",
+ "Tenkanidiyur First Grade College PG centre: ₹6 crore",
+ "Ajjarkad First Grade College: ₹1.50 crore, plus ₹0.30 crore for a lab",
+ "District library: ₹3 crore",
+ "Akshara Dasoha kitchens in 130 schools: ₹8.76 crore. Midday meals ₹17.33 crore. Ksheera Bhagya ₹5.70 crore",
+ "Bicycles ₹5.34 crore, uniforms ₹1.52 crore, shoes ₹0.47 crore",
+ "New buildings for several PU colleges and schools"]},
+{id:"transport",name:"Transport",cr:51,icon:"bus",items:[
+ "44 NURM city buses: ₹10 crore",
+ "NURM bus depot at Kodankur and Nittur: ₹6 crore. NURM bus stand: ₹4 crore",
+ "New KSRTC bus stand at Bannanje: ₹31 crore",
+ "Free bus passes for students"]},
+{id:"industry",name:"Industry",cr:47.5,icon:"factory",items:[
+ "Government Tool Room and Training Centre, Uppoor: ₹44 crore",
+ "CMEGP: 14 people, ₹0.26 crore. PMEGP: 52 people, ₹1.47 crore",
+ "Khadi support: ₹1.68 crore"]},
+{id:"scst",name:"SC/ST welfare",cr:38.21,icon:"people",items:[
+ "Infrastructure for SC/ST colonies: ₹18.34 crore",
+ "Ambedkar and Jagjivan Ram Bhavan in Udupi (₹3.50 crore) and Brahmavar (₹0.50 crore), plus 16 local Ambedkar Bhavans",
+ "Morarji Desai PU residential college at Aroor: ₹9.15 crore",
+ "Free laptops for more than 150 SC/ST students",
+ "Koraga colonies: ₹1.05 crore"]},
+{id:"elec",name:"Electrification",cr:28.99,icon:"bolt",items:[
+ "24×7 power for Udupi taluk",
+ "Free power for 14,462 irrigation pumpsets: ₹25 crore",
+ "71 additional transformers: ₹2.80 crore"]},
+{id:"housing",name:"Housing",cr:29,icon:"home",items:[
+ "Ashraya loan waiver: ₹8.38 crore (1,903 rural cases, ₹2.66 crore, and 1,004 urban, ₹2.83 crore)",
+ "759 urban house sites and 297 houses under Ambedkar and Vajpayee schemes",
+ "Basava housing: 4,905 rural houses, ₹15.20 crore",
+ "More than 100 houses built through donors for homeless families"]},
+{id:"minor",name:"Minorities",cr:26,icon:"people",items:[
+ "Loan waiver for 1,676 people: ₹3.59 crore. Fresh loans to 2,527 people: ₹6.89 crore",
+ "Maulana Azad Bhavan: ₹1.29 crore",
+ "Minority colony infrastructure: ₹4.50 crore",
+ "Grants to churches including Milagres, Mount Rosary and Stella Maris"]},
+{id:"youth",name:"Youth and sports",cr:25.99,icon:"track",items:[
+ "Ajjarkad stadium: 400 m synthetic track ₹3.64 crore, synthetic tennis court ₹3.75 crore",
+ "Indoor shuttle hall with air-conditioning ₹1.21 crore, international gym ₹2 crore",
+ "Swimming pool ₹2 crore plus roof ₹1.69 crore",
+ "Sports hostel ₹1.49 crore, women's hostel ₹1 crore, basketball court ₹0.20 crore",
+ "Pavilion roof ₹83 lakh from the Oscar Fernandes MP fund",
+ "Brahmavar cricket ground on 5.5 acres, with a wall costing ₹75 lakh",
+ "Two acres at Malpe Padukere reserved for water sports",
+ "Yuva Chaitanya scheme for youth"]},
+{id:"women",name:"Women and child",cr:24.44,icon:"heart",items:[
+ "Anganwadi food: ₹11.52 crore",
+ "1,911 Bhagyalakshmi bonds: ₹3.13 crore",
+ "1,425 toilets: ₹1.31 crore",
+ "Nittur girls' home: ₹1.15 crore. WCD office: ₹0.94 crore",
+ "Stree Shakti Bhavan at Handadi: ₹0.23 crore",
+ "1,595 Stree Shakti groups supported: ₹0.84 crore"]},
+{id:"health",name:"Health",cr:23.9,icon:"hospital",items:[
+ "200-bed free Koosamma Shambhu Shetty Memorial Haji Abdulla Women and Children Hospital, a first-of-its-kind government and private partnership in India",
+ "Nagu Magu free drop-home vehicle for mothers and newborns",
+ "CM relief fund: ₹3.05 crore to 275 patients. Vajpayee Arogyashree: 510 patients, ₹3.07 crore",
+ "Brahmavar 30-bed community health centre: ₹9.36 crore",
+ "Karje PHC: ₹1.37 crore. AYUSH hospital: ₹1.40 crore",
+ "108 ambulances for Brahmavar and Malpe PHCs",
+ "Jan Sanjeevini pharmacy with 50% discount"]},
+{id:"water",name:"Drinking water",cr:20.29,icon:"drop",items:[
+ "678 drinking water works, ₹20.29 crore",
+ "340 rural works: ₹17.68 crore. 121 task-force works: ₹2.61 crore",
+ "Multi-village scheme of ₹104.50 crore with the DPR ready"]},
+{id:"backward",name:"Backward classes",cr:17.89,icon:"people",items:[
+ "₹14.75 crore for community halls, Vidyasiri, Morarji schools, hostels and Devaraj Urs loans",
+ "₹3.14 crore post-matric girls' hostel at Manipal",
+ "Halls for Billava, Mogaveera, Devadiga, Kudubi, Madivala, RSB, Vishwakarma, Nayari and Chappatigar Saraswat groups (₹3 to 55 lakh each)"]},
+{id:"revenue",name:"Revenue",cr:14.69,icon:"doc",items:[
+ "Brahmavar declared a taluk in 2017-18, with a ₹10 crore Mini Vidhana Soudha",
+ "Pensions: disability 674, Sandhya Suraksha 4,716, widow 2,168, old age 393, Manaswini 760",
+ "Title deeds: 585 under 94C and 757 under 94CC",
+ "Natural-calamity relief for 1,043 families: ₹2.55 crore",
+ "Areca disease relief for 1,007 farmers: ₹0.71 crore"]},
+{id:"gv",name:"Grama Vikasa",cr:8.75,icon:"town",items:[
+ "Village development grants of ₹0.75 to ₹1 crore per village"]},
+{id:"temple",name:"Religious places",cr:6.97,icon:"temple",items:[
+ "Grants of ₹1 lakh to ₹29.5 lakh to about 100 temples, daivasthanas, garadis and bhajana mandirs"]},
+{id:"info",name:"Information dept",cr:3,icon:"doc",items:[
+ "₹3 crore for information department works, and ₹3 crore for Gandhi Bhavan in Udupi"]},
+{id:"indira",name:"Indira Canteen",cr:2.2,icon:"coin",items:[
+ "Indira Canteen in Udupi: ₹2.20 crore"]}
+];
+var BA=[
+ {t:"State diesel subsidy",u:"₹ crore a year",b:105,a:157,max:170},
+ {t:"Tax-free diesel per boat",u:"lakh kL",b:1.25,a:1.5,max:1.6},
+ {t:"Matsyashraya housing aid",u:"₹ lakh per family",b:0.6,a:1.2,max:1.3},
+ {t:"Death-at-sea relief",u:"₹ lakh (₹5 lakh in between)",b:2,a:6,max:7},
+ {t:"Interest on fisherwomen loans",u:"% (lower is better)",b:3,a:2,max:3.2,pct:true}
+];
+var BR=[["Malpe–Padukere",16.91],["Mudduru–Miyaru (Sita)",13],["Parari (Swarna)",10],["Nalkur–Horlali Muddumane",10],["Nilavara–Panchamikana",9],["Kemmannu Thimmanna Kuduru",5],["Perampalli Pas Kudru (2)",4],["Santhekatte–Kemmannu–Hoode",3.5],["Karje–Haluvalli–Inchladi",3.26],["Cherkadi–Gorpalli",2.85]];
+var NUMS=[["21,000","BPL ration cards"],["14,462","free-power pumpsets"],["1,622","boat owners got diesel subsidy"],["29,789","fisherwomen loan beneficiaries"],["13,197","dairy farmers on milk incentive"],["2,695","road works completed"],["1,911","Bhagyalakshmi bonds"],["44","city buses (NURM)"],["678","drinking water works"],["100+","donor-built homes"]];
+
+function $(id){return document.getElementById(id)}
+var nf=new Intl.NumberFormat("en-IN",{maximumFractionDigits:2});
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+/* numbers */
+$("numgrid").innerHTML=NUMS.map(function(n){return '<div class="num"><b>'+n[0]+'</b><span>'+n[1]+'</span></div>'}).join("");
+
+/* explorer */
+var sel="roads",sortMode="amt",max=468;
+function banner(s,i){
+  var h=(190+i*17)%360;
+  return '<svg class="banner" viewBox="0 0 600 150" role="img" aria-label="Illustration for '+esc(s.name)+'">'+
+  '<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl('+h+' 55% 20%)"/><stop offset="1" stop-color="hsl('+((h+40)%360)+' 70% 42%)"/></linearGradient></defs>'+
+  '<rect width="600" height="150" fill="url(#bg)"/><circle cx="470" cy="46" r="34" fill="#ffe2ae" opacity=".85"/>'+
+  '<path d="M0 108c50-14 100 14 150 0s100-14 150 0 100 14 150 0 100-14 150 0V150H0z" fill="#06161c" opacity=".55"/>'+
+  '<path d="M0 124c50-14 100 14 150 0s100-14 150 0 100 14 150 0 100-14 150 0V150H0z" fill="#06161c" opacity=".7"/>'+
+  '<svg x="40" y="28" width="88" height="88" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-'+s.icon+'"/></svg></svg>';
+}
+function amtLabel(s){return "₹"+nf.format(s.cr)+" crore"}
+function renderRows(){
+  var list=S.slice();
+  if(sortMode==="amt")list.sort(function(a,b){return b.cr-a.cr});else list.sort(function(a,b){return a.name.localeCompare(b.name)});
+  $("rows").innerHTML=list.map(function(s){
+    return '<button type="button" class="row" data-id="'+s.id+'" aria-pressed="'+(s.id===sel)+'"><span>'+esc(s.name)+'</span><span class="bar"><i style="width:'+(s.cr/max*100).toFixed(1)+'%"></i></span><b>'+nf.format(s.cr)+'</b></button>';
+  }).join("");
+}
+function renderPanel(){
+  var i=S.findIndex(function(s){return s.id===sel}),s=S[i];
+  $("panel").innerHTML=banner(s,i)+'<div class="pbody"><h3>'+esc(s.name)+'</h3><div class="amt">'+amtLabel(s)+' · '+s.items.length+' items</div><ul>'+s.items.map(function(t){return "<li>"+esc(t)+"</li>"}).join("")+'</ul></div>';
+}
+$("rows").addEventListener("click",function(e){
+  var b=e.target.closest(".row");if(!b)return;
+  sel=b.getAttribute("data-id");renderRows();renderPanel();
+  if(window.matchMedia("(max-width:820px)").matches)$("panel").scrollIntoView({behavior:"smooth",block:"start"});
+});
+function setSort(m){sortMode=m;$("sortAmt").setAttribute("aria-pressed",m==="amt");$("sortAz").setAttribute("aria-pressed",m==="az");renderRows()}
+$("sortAmt").onclick=function(){setSort("amt")};$("sortAz").onclick=function(){setSort("az")};
+renderRows();renderPanel();
+
+/* before after */
+var stage="after";
+function renderBA(){
+  $("ba").innerHTML=BA.map(function(m){
+    var v=stage==="after"?m.a:m.b;
+    return '<div class="bacard"><h3>'+m.t+'</h3><div class="v">'+nf.format(v)+(m.pct?"%":"")+'</div><div class="u">'+m.u+'</div><div class="bar"><i style="width:'+(v/m.max*100).toFixed(1)+'%"></i></div></div>';
+  }).join("");
+  $("baBefore").setAttribute("aria-pressed",stage==="before");$("baAfter").setAttribute("aria-pressed",stage==="after");
+}
+$("baBefore").onclick=function(){stage="before";renderBA()};$("baAfter").onclick=function(){stage="after";renderBA()};
+renderBA();
+
+/* bridges */
+$("bridges").innerHTML=BR.map(function(b){return '<div class="br"><span>'+esc(b[0])+'</span><span class="bar"><i style="width:'+(b[1]/16.91*100).toFixed(1)+'%"></i></span><b>'+nf.format(b[1])+'</b></div>'}).join("");
+
+/* finder */
+var ALL=[];S.forEach(function(s){s.items.forEach(function(t){ALL.push({s:s.name,id:s.id,t:t})})});
+$("sec").innerHTML='<option value="">All sectors</option>'+S.map(function(s){return '<option value="'+s.id+'">'+esc(s.name)+'</option>'}).join("");
+function runFinder(){
+  var q=$("q").value.trim(),sc=$("sec").value;
+  var re=q?new RegExp("("+q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","ig"):null;
+  var hits=ALL.filter(function(r){return(!sc||r.id===sc)&&(!q||r.t.toLowerCase().indexOf(q.toLowerCase())>-1)});
+  $("count").textContent=hits.length+" of "+ALL.length+" items";
+  $("results").innerHTML=hits.length?hits.map(function(r){var t=esc(r.t);if(re)t=t.replace(re,"<mark>$1</mark>");return "<li><small>"+esc(r.s).toUpperCase()+"</small>"+t+"</li>"}).join(""):"<li>No match. Try a shorter word or choose All sectors.</li>";
+}
+$("q").addEventListener("input",runFinder);$("sec").addEventListener("change",runFinder);runFinder();
+
+/* theme */
+$("theme").onclick=function(){
+  var r=document.documentElement,cur=r.getAttribute("data-theme");
+  if(!cur)cur=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  r.setAttribute("data-theme",cur==="dark"?"light":"dark");
+};
+})();
+</script>
+</body>
+</html>
